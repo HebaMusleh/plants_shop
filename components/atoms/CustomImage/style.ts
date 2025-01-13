@@ -4,10 +4,11 @@ export const styles =StyleSheet.create({
     wrapper: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#eee',
         overflow: 'hidden',
-        width:200,
-        height:200,
+        width:168,
+        height:134,
+        borderRadius:8,
       },
       image: {
         width: '100%',

@@ -32,6 +32,7 @@ const CustomImage: React.FC<CustomImageProps> = ({
         ]}
         onLoadEnd={() => setLoading(false)}
         onError={() => setError(true)}
+        resizeMode='contain'
       />
     </View>
   );

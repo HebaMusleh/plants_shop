@@ -1,4 +1,4 @@
 import CustomButton from './CustomButton/CustomButton';
 import CustomText from './CustomText/CustomText';
-
-export {CustomButton,CustomText} 
+import CustomCounterButton from './CustomCounterButton/CustomCounterButton';
+export {CustomButton,CustomText,CustomCounterButton} 

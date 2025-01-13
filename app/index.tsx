@@ -1,12 +1,11 @@
 import React from 'react'
+
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
-type Props = {}
-
-const HomeScreen = (props: Props) => {
+const HomeScreen = () => {
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:"#fff" }}>
+    <SafeAreaView style={{ flex: 1,backgroundColor:"#fff" }}>
     </SafeAreaView>
   )
 }

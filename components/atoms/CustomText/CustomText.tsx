@@ -1,18 +1,18 @@
-import { View, Text } from "react-native";
+import { View, Text,TextStyle } from "react-native";
 import React from "react";
 import { styles } from "./styles";
-
-type Props = {};
 
 const CustomText = ({
   secondary,
   price,
   text,
+  style,
   rest,
 }: {
   secondary?: boolean;
   price?: boolean;
   text:string;
+  style?: TextStyle;
   rest?: any;
 }) => {
   return (
@@ -22,6 +22,7 @@ const CustomText = ({
         style={[
           secondary ? styles.secondary : styles.primary,
           price && styles.price,
+          style
         ]}
       >
         {text}

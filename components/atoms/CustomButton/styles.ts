@@ -2,15 +2,21 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     button:{
-        backgroundColor:"#0B845C",
         borderRadius:8,
         padding:10
     },
+    active:{
+        backgroundColor:"#0B845C",
+    },
     text:{
-        color:"#fff",
+        color:"#7D7B7B",
         fontSize:14,
         lineHeight:21,
-        fontWeight:600,
+        fontWeight:400,
         fontFamily:"Poppins"
+    },
+    textActive:{
+        color:"#fff",
+        fontWeight:600,
     }
 })

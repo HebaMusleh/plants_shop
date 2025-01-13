@@ -1,13 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import CustomButton from '@/components/atoms/CustomButton/CustomButton'
+import { CustomText,CustomButton } from '@/components/atoms'
 
 type Props = {}
 
 const HomeScreen = (props: Props) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:"#fff" }}>
-     <CustomButton/>
+     <CustomButton active title='Hello Button'/>
+     <CustomText secondary text='Hello Text'/>
     </View>
   )
 }

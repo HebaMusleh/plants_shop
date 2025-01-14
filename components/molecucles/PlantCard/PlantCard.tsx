@@ -9,12 +9,20 @@ type Props = {
   title: string;
   category: string;
   price: string;
-  id:string;
+  id: string;
 };
 
-const PlantCard = ({ uri, title, category, price,id }: Props) => {
+const PlantCard = ({ uri, title, category, price, id }: Props) => {
   return (
-    <TouchableOpacity style={styles.wrapper} onPress={()=>router.push({ pathname: `/details/${id}` })}>
+    <TouchableOpacity
+      style={styles.wrapper}
+      onPress={() =>
+        router.push({
+          pathname: "/details/[id]",
+          params: { id },
+        })
+      }
+    >
       <CustomImage uri={uri} />
       <View style={styles.textWrapper}>
         <CustomText text={title} />

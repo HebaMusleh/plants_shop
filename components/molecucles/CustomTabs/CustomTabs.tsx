@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { CustomButton } from "@/components/atoms";
 
 import { ITabs } from "@/types";
+import { styles } from "./styles";
 
 const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
@@ -16,7 +17,7 @@ const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
   };
   return (
     <View>
-      <View>
+      <View style={styles.tabsWrapper}>
         {tabs.map((tab) => (
           <CustomButton
             title={tab.title}

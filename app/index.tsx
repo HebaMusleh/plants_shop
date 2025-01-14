@@ -1,13 +1,29 @@
 import React from 'react'
+import { StyleSheet, Text } from 'react-native'
 
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { Container } from '@/components/atoms'
+import { CustomTabs } from '@/components/molecucles'
+import { homeTabs } from '@/constants/tabs'
+
 
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={{ flex: 1,backgroundColor:"#fff" }}>
-    </SafeAreaView>
+    <Container>
+      <Text style={styles.title}>Plants</Text>
+      <CustomTabs tabs={homeTabs}/>
+    </Container>
+    
   )
 }
-
+const styles = StyleSheet.create({
+  title:{
+    fontSize:24,
+    fontWeight:'600',
+    textAlign:'left',
+    letterSpacing:0.005,
+    lineHeight:36,
+    paddingBottom:20
+  }
+})
 export default HomeScreen

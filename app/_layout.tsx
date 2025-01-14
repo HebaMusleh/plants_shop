@@ -36,6 +36,7 @@ export default function RootLayout() {
       }}
       >
         <Stack.Screen name="index"/>
+        <Stack.Screen name="details/[id]"/>
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

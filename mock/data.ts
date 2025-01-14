@@ -1,0 +1,42 @@
+export const data = [
+    {
+        id: "1",
+        title: "Snake Plant",
+        category: "new",
+        description: "A low-maintenance indoor plant with air-purifying qualities.",
+        price: "19.99",
+        uri: "https://example.com/snake-plant.jpg",
+    },
+    {
+        id: "2",
+        title: "Fiddle Leaf Fig",
+        category: "Indoor",
+        description: "A popular indoor plant known for its large, vibrant green leaves.",
+        price: "39.99",
+        uri: "https://example.com/fiddle-leaf-fig.jpg",
+    },
+    {
+        id: "3",
+        title: "Aloe Vera",
+        category: "outdoor",
+        description: "A succulent plant with medicinal properties, great for skin care.",
+        price: "14.99",
+        uri: "https://example.com/aloe-vera.jpg",
+    },
+    {
+        id: "4",
+        title: "Spider Plant",
+        category: "Indoor",
+        description: "A resilient plant that produces spider-like offshoots and is easy to care for.",
+        price: "12.99",
+        uri: "https://example.com/spider-plant.jpg",
+    },
+    {
+        id: "5",
+        title: "Monstera Deliciosa",
+        category: "outdoor",
+        description: "A tropical plant with large, split leaves, perfect for a decorative indoor setting.",
+        price: "49.99",
+        uri: "https://example.com/monstera-deliciosa.jpg",
+    },
+];

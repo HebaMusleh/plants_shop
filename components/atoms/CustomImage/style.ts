@@ -6,7 +6,7 @@ export const styles =StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#eee',
         overflow: 'hidden',
-        width:168,
+        width:160,
         height:134,
         borderRadius:8,
       },

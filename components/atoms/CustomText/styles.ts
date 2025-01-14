@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         color:"#121212",
         fontSize:16,
         lineHeight:22,
-        fontWeight:600,
+        fontWeight:700,
         fontFamily:"Poppins"
     },
     price:{

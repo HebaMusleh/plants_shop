@@ -1,4 +1,4 @@
-import { View, Text,TextStyle } from "react-native";
+import { View, Text, TextStyle } from "react-native";
 import React from "react";
 import { styles } from "./styles";
 
@@ -11,7 +11,7 @@ const CustomText = ({
 }: {
   secondary?: boolean;
   price?: boolean;
-  text:string;
+  text: string | undefined;
   style?: TextStyle;
   rest?: any;
 }) => {
@@ -22,7 +22,7 @@ const CustomText = ({
         style={[
           secondary ? styles.secondary : styles.primary,
           price && styles.price,
-          style
+          style,
         ]}
       >
         {text}

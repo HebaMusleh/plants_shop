@@ -5,7 +5,7 @@ export const data = [
         category: "new",
         description: "A low-maintenance indoor plant with air-purifying qualities.",
         price: "19.99",
-        uri: "https://example.com/snake-plant.jpg",
+        uri: "https://s3-alpha-sig.figma.com/img/fd2a/e15f/0d1a8a4fbaf6cc046135521a0e85ad62?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iJXsRbenPT9gGh53P-SFRjFBY59U6Ik33DUuHUq1ZnVn3pnuxUyDcy6hv8hPl14G9pTs4LkY5cXciX6nUFwv2i7kyIqozenulmyn1AeAvwrXgMan~RLwgXnMlamgNNg7dzbpi7iByRg0dVqnFXMIVRS-hXFmcZaitT-RZTvAMpUbqQQjqhfAkaRfG5ibYFbF3ACh8BkW9CF9vbRWC9JU7wTuHTxCQ8ld5RFQ1Ac80-YjTnTToTIck6KcsjthvCw~JfGWuHh9G6dPWYbMFxbA36Zc36iEYhgiXsP2KDSpTQr9gyRY6nQbmyrdF180h55efQ3feI5DrbZJsqUpInXzlQ__",
     },
     {
         id: "2",

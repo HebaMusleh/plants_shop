@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ImageBackground, StyleSheet } from "react-native";
+import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useLocalSearchParams } from "expo-router";
@@ -13,7 +13,6 @@ import { CustomTabs } from "@/components/molecucles";
 
 import { data } from "@/mock/data";
 import { detailsTabs } from "@/constants/tabs";
-
 
 const DetailsScreen = () => {
   const { id } = useLocalSearchParams();
@@ -41,7 +40,9 @@ const DetailsScreen = () => {
             <CustomCounterButton text="-" />
           </View>
         </View>
-        <View>Review sections</View>
+        <View>
+          <Image source={require("../../assets/images/reviews.png")} />
+        </View>
         <View>
           <CustomTabs tabs={detailsTabs} />
         </View>
@@ -75,7 +76,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   counter: {
-    marginHorizontal: "2%",
+    marginLeft: 10,
+    marginRight: 10,
     fontWeight: 500,
     fontSize: 20,
   },

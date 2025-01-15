@@ -30,16 +30,16 @@ export default function CartCard({
           <CustomText text={category} secondary />
           <View style={styles.plantWrapper}>
             <CustomCounterButton text="-" />
-            <CustomText text="1" style={{ marginLeft: 10, marginRight: 10 }} />
+            <CustomText text="1" style={styles.text} />
             <CustomCounterButton text="+" />
           </View>
         </View>
       </View>
-      <View style={{ justifyContent: "space-between" }}>
+      <View style={styles.secondSection}>
         <TouchableOpacity style={styles.icons}>
-          <MaterialCommunityIcons name="delete" color={"#0B845C"} />
+          <MaterialCommunityIcons name="close" color={"#0B845C"} />
         </TouchableOpacity>
-        <CustomText text={price} price />
+        <CustomText text={`${price}$`} price />
       </View>
     </View>
   );

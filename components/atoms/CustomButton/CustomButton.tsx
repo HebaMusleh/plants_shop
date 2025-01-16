@@ -1,15 +1,30 @@
-import {Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import React from "react";
 
-import { styles } from './styles'
+import { styles } from "./styles"; // try to use the .styles.ts approach here and in the rest of the app
 
-
-const CustomButton = ({active,title,onPress,rest}: {active?:boolean,title:string,onPress:()=>void,rest?:any}) => {
-  return (
-    <TouchableOpacity style={[styles.button,active&&styles.active]} {...rest} onPress={onPress}>
-      <Text style={[styles.text,active&&styles.textActive]}>{title}</Text>
-    </TouchableOpacity>
-  )
+// defining an interface will allow you to create reusable types
+interface CustomButtonProps {
+  active?: boolean;
+  title: string;
+  onPress: () => void;
+  rest?: TouchableOpacityProps;
 }
+const CustomButton: React.FC<CustomButtonProps> = ({
+  active,
+  title,
+  onPress,
+  rest,
+}) => {
+  return (
+    <TouchableOpacity // you can also use Pressable component
+      style={[styles.button, active && styles.active]}
+      {...rest}
+      onPress={onPress}
+    >
+      <Text style={[styles.text, active && styles.textActive]}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
 
-export default CustomButton
+export default CustomButton;

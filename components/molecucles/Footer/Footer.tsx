@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import { CustomButton, CustomText } from "@/components/atoms";
 import { styles } from "./styles";
 
-type Props = {};
+// when ever we use props it almost always should be destructured
 
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <View style={styles.footer}>
       <View>
@@ -17,6 +17,8 @@ const Footer = (props: Props) => {
           active
           title="Proceed to checkout"
           onPress={() => console.log("checkout button")}
+          // one liner functions are considered ok to stay inline but if it ever becomes bigger we need to separate it
+          // to a const with a name that reflects business logic
         />
       </View>
     </View>

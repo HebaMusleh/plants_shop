@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import { CustomButton } from "@/components/atoms";
 
-import { ITabs } from "@/types";
-import { styles } from "./styles";
+import { homeTabs as tabs } from "@/constants/tabs";
+import styles from "./CustomTabs.styles";
 
-const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
+const CustomTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
 
   const renderContent = () => {
@@ -15,11 +15,13 @@ const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
     )?.content;
     return activeTabContent || null;
   };
+
   return (
     <View>
       <View style={styles.tabsWrapper}>
-        {tabs.map((tab) => (
+        {tabs.map((tab, i) => (
           <CustomButton
+            key={i}
             title={tab.title}
             active={activeTab === tab.key}
             onPress={() => setActiveTab(tab.key)}

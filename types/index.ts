@@ -13,4 +13,5 @@ interface IData {
   uri: string;
 }
 
-export { ITabs,IData };
+export { ITabs, IData }; 
+// the naming convention of ITabs is sometimes considered redundant and unnecessary but this is a matter of preference 

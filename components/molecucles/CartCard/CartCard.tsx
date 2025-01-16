@@ -10,22 +10,26 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { styles } from "./styles";
 
+interface CartCardProps {
+  uri: string;
+  title: string;
+  category: string;
+  price: string;
+}
+
+// the convention is to use arrow functions but this also is not incorrect
 export default function CartCard({
   uri,
   title,
   category,
   price,
-}: {
-  uri: string;
-  title: string;
-  category: string;
-  price: string;
-}) {
+}: CartCardProps) {
   return (
     <View style={styles.container}>
       <View style={styles.plantWrapper}>
         <CustomImage cart uri={uri} />
         <View style={{ marginLeft: 10 }}>
+          {/** always remember to remove inline styling  */}
           <CustomText text={title} />
           <CustomText text={category} secondary />
           <View style={styles.plantWrapper}>

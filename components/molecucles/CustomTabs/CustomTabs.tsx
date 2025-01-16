@@ -6,7 +6,7 @@ import styles from "./CustomTabs.styles";
 // spacing it not really needed between imports you already seem to have a good grasp
 // to import hierarchy
 
-const CustomTabs = ({ tabs }) => {
+const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
 
   const renderContent = () => {

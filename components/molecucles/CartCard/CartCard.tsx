@@ -1,26 +1,15 @@
-import React from "react";
-
+import React, { FC } from "react";
 import { TouchableOpacity, View } from "react-native";
 import {
   CustomCounterButton,
   CustomImage,
   CustomText,
 } from "@/components/atoms";
-
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { styles } from "./styles";
+import { CartCardProps } from "@/types";
+import styles from "./CartCard.styles";
 
-export default function CartCard({
-  uri,
-  title,
-  category,
-  price,
-}: {
-  uri: string;
-  title: string;
-  category: string;
-  price: string;
-}) {
+const CartCard: FC<CartCardProps> = ({ uri, title, category, price }) => {
   return (
     <View style={styles.container}>
       <View style={styles.plantWrapper}>
@@ -43,4 +32,6 @@ export default function CartCard({
       </View>
     </View>
   );
-}
+};
+
+export default CartCard;

@@ -1,12 +1,10 @@
-import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { styles } from "./style";
+import styles from "./Header.styles";
 import { router } from "expo-router";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <View style={styles.headerStyle}>
       <TouchableOpacity onPress={() => router.back()}>

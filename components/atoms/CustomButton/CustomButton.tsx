@@ -1,15 +1,25 @@
-import {Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
 
-import { styles } from './styles'
+import styles from "./CustomButton.styles";
+import { CustomButtonProps } from "@/types";
 
-
-const CustomButton = ({active,title,onPress,rest}: {active?:boolean,title:string,onPress:()=>void,rest?:any}) => {
+const CustomButton: React.FC<CustomButtonProps> = ({
+  active,
+  title,
+  onPress,
+  buttonProps,
+  buttonStyle,
+}) => {
   return (
-    <TouchableOpacity style={[styles.button,active&&styles.active]} {...rest} onPress={onPress}>
-      <Text style={[styles.text,active&&styles.textActive]}>{title}</Text>
+    <TouchableOpacity
+      style={[styles.button, active && styles.active,buttonStyle]}
+      {...buttonProps}
+      onPress={onPress}
+    >
+      <Text style={[styles.text, active && styles.textActive]}>{title}</Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export default CustomButton
+export default CustomButton;

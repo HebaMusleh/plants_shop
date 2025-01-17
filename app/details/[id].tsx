@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  Image,
+  Pressable,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useLocalSearchParams } from "expo-router";
@@ -13,6 +20,7 @@ import { CustomTabs } from "@/components/molecucles";
 
 import { data } from "@/mock/data";
 import { detailsTabs } from "@/constants/tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DetailsScreen = () => {
   const { id } = useLocalSearchParams();
@@ -46,11 +54,24 @@ const DetailsScreen = () => {
         <View>
           <CustomTabs tabs={detailsTabs} />
         </View>
-        <CustomButton
-          title="Add to cart"
-          onPress={() => console.log("add to cart")}
-          active
-        />
+        <View style={styles.buttonWrapper}>
+          <Pressable
+            onPress={() => console.log("add to fav")}
+            style={styles.iconsStyle}
+          >
+            <MaterialCommunityIcons
+              name="heart-outline"
+              size={24}
+              color="#7D7B7B"
+            />
+          </Pressable>
+          <CustomButton
+            title="Add to cart"
+            onPress={() => console.log("add to cart")}
+            active
+            buttonStyle={{ width: "85%" }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -80,6 +101,17 @@ const styles = StyleSheet.create({
     marginRight: 10,
     fontWeight: 500,
     fontSize: 20,
+  },
+  buttonWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  iconsStyle: {
+    borderWidth: 2,
+    borderColor: "#7D7B7B",
+    borderRadius: 8,
+    padding: 5,
   },
 });
 

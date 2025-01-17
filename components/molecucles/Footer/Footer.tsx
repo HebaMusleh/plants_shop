@@ -1,11 +1,9 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { CustomButton, CustomText } from "@/components/atoms";
-import { styles } from "./styles";
+import styles from "./Footer.styles";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <View style={styles.footer}>
       <View>

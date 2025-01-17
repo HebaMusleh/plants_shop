@@ -1,24 +1,20 @@
-import { View, Text, TextStyle } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
-import { styles } from "./styles";
+import styles from "./CustomText.styles";
+import { CustomTextProps } from "@/types";
 
-const CustomText = ({
+const CustomText: React.FC<CustomTextProps> = ({
   secondary,
   price,
   text,
   style,
-  rest,
-}: {
-  secondary?: boolean;
-  price?: boolean;
-  text: string | undefined;
-  style?: TextStyle;
-  rest?: any;
+  textProps,
+  textContainerStyle,
 }) => {
   return (
-    <View>
+    <View style={textContainerStyle}>
       <Text
-        {...rest}
+        {...textProps}
         style={[
           secondary ? styles.secondary : styles.primary,
           price && styles.price,

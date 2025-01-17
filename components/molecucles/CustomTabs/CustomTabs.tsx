@@ -1,13 +1,27 @@
-import React, { useState } from "react";
-
+import React, { useCallback, useState } from "react";
 import { View } from "react-native";
 import { CustomButton } from "@/components/atoms";
-
 import { ITabs } from "@/types";
-import { styles } from "./styles";
+import styles from "./CustomTabs.styles";
 
 const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
   const [activeTab, setActiveTab] = useState(tabs[0].key);
+
+  const tabPressHandler = useCallback((tab: ITabs) => {
+    setActiveTab(tab.key);
+  }, []);
+
+  const tabsRenderHandler = (tab: ITabs) => {
+    const isActive = activeTab === tab.key;
+    return (
+      <CustomButton
+        key={tab.key}
+        title={tab.title}
+        active={isActive}
+        onPress={() => tabPressHandler(tab)}
+      />
+    );
+  };
 
   const renderContent = () => {
     const activeTabContent = tabs.find(
@@ -17,15 +31,7 @@ const CustomTabs = ({ tabs }: { tabs: ITabs[] }) => {
   };
   return (
     <View>
-      <View style={styles.tabsWrapper}>
-        {tabs.map((tab) => (
-          <CustomButton
-            title={tab.title}
-            active={activeTab === tab.key}
-            onPress={() => setActiveTab(tab.key)}
-          />
-        ))}
-      </View>
+      <View style={styles.tabsWrapper}>{tabs.map(tabsRenderHandler)}</View>
       <View>{renderContent()}</View>
     </View>
   );

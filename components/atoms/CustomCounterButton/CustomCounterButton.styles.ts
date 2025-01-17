@@ -1,19 +1,19 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
   button: {
     borderColor: "#0B845C",
     borderWidth: 2,
     borderRadius: 10,
-    width: 30, 
+    width: 30,
     height: 30,
-    textAlign:"center",
-    justifyContent:"center",
-    alignItems:"center",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     color: "#0B845C",
     fontSize: 20,
-    textAlign: "center", 
+    textAlign: "center",
   },
 });

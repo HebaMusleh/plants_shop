@@ -3,7 +3,7 @@ import CustomText from "./CustomText/CustomText";
 import CustomCounterButton from "./CustomCounterButton/CustomCounterButton";
 import CustomImage from "./CustomImage/CustomImage";
 import Container from "./Container/Container";
-import Header from './Header/Header';
+import Header from "./Header/Header";
 
 export {
   CustomButton,
@@ -11,5 +11,5 @@ export {
   CustomCounterButton,
   CustomImage,
   Container,
-  Header
+  Header,
 };

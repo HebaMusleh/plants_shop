@@ -1,11 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 import { Container, CustomText, Header } from "@/components/atoms";
 import { CartCard, Footer } from "@/components/molecucles";
 
-type Props = {};
-
-const Cart = (props: Props) => {
+const Cart = () => {
   return (
     <Container>
       <Header />
@@ -18,7 +16,7 @@ const Cart = (props: Props) => {
         </View>
       </View>
       <View>
-        <CartCard title="njdng" uri="jnjlkdv" price="97898" category="ijvior"/>
+        <CartCard title="njdng" uri="jnjlkdv" price="97898" category="ijvior" />
       </View>
       <Footer />
     </Container>
@@ -28,8 +26,8 @@ const styles = StyleSheet.create({
   flexRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems:"center",
-    paddingVertical:20
+    alignItems: "center",
+    paddingVertical: 20,
   },
   title: {
     fontSize: 24,

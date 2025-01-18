@@ -12,18 +12,18 @@ interface ITabs {
 }
 
 interface IData {
-  id: string;
-  title: string;
-  category: string;
+  id: number;
+  name: string;
+  price: number;
   description: string;
-  price: string;
-  uri: string;
+  category: string;
+  image_url: string;
 }
 
 interface CustomTextProps {
   secondary?: boolean;
   price?: boolean;
-  text?: string;
+  text?: string|number;
   style?: TextStyle;
   textProps?: TextProps;
   textContainerStyle?: ViewStyle;
@@ -51,11 +51,11 @@ interface CartCardProps {
 }
 
 interface PlantCardProps {
-  uri: string;
-  title: string;
+  id: number;
+  name: string;
+  image_url: string;
   category: string;
-  price: string;
-  id: string;
+  price: number;
 }
 
 export {

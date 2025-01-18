@@ -14,13 +14,13 @@ const CustomImage: React.FC<CustomImageProps> = ({
 
   return (
     <View style={[styles.wrapper, cart && styles.cartWrapper]}>
-      {loading && <ActivityIndicator style={styles.loader} />}
+      {loading && <ActivityIndicator style={styles.loader} color="#0B845C" />}
       <Image
         source={{ uri: error ? fallbackUri : uri }}
         style={[styles.image]}
         onLoadEnd={() => setLoading(false)}
         onError={() => setError(true)}
-        resizeMode="contain"
+        resizeMode="cover"
       />
     </View>
   );

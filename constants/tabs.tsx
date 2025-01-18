@@ -1,27 +1,26 @@
 import { Container, CustomText } from "@/components/atoms";
 import { TabContent } from "@/components/molecucles";
-import { data } from "@/mock/data";
 
 export const homeTabs = [
   {
     key: "all",
     title: "All",
-    content: <TabContent data={data} />,
+    content: <TabContent />,
   },
   {
     key: "new",
     title: "New",
-    content: <TabContent data={data} />,
+    content: <TabContent type="new" />,
   },
   {
     key: "outdoor",
     title: "Outdoor",
-    content: <TabContent data={data} />,
+    content: <TabContent type="outdoor" />,
   },
   {
     key: "indoor",
     title: "Indoor",
-    content: <TabContent data={data} />,
+    content: <TabContent type="indoor" />,
   },
 ];
 

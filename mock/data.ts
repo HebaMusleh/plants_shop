@@ -13,7 +13,7 @@ export const data = [
         category: "Indoor",
         description: "A popular indoor plant known for its large, vibrant green leaves.",
         price: "39.99",
-        uri: "https://example.com/fiddle-leaf-fig.jpg",
+        uri: "https://i.pinimg.com/736x/01/02/a7/0102a739a28b8cabb2eb151b077eb456.jpg",
     },
     {
         id: "3",

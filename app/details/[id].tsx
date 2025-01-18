@@ -69,7 +69,7 @@ const DetailsScreen = () => {
             title="Add to cart"
             onPress={() => console.log("add to cart")}
             active
-            buttonStyle={{ width: "85%" }}
+            buttonStyle={{flexBasis:"88%"}}
           />
         </View>
       </View>

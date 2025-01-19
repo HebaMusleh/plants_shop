@@ -1,15 +1,22 @@
 import axios from "axios";
 import "../axiosConfig";
 
+
 const getAll = async (type: string) => {
   try {
     const response = await axios.get(`/categories/${type}/plants`);
+    if (!response)
+      throw new Error(
+        "There was an error while fetching the data. Please try again later."
+      );
     return response.data;
-  } catch (err) {
-    if (err instanceof Error) {
-      console.log(err.message);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(
+        `An error occurred while fetching data: ${error.message}`
+      );
     } else {
-      console.log(err);
+      throw new Error("An unknown error occurred");
     }
   }
 };
@@ -17,12 +24,18 @@ const getAll = async (type: string) => {
 const getDetails = async (id: string | string[]) => {
   try {
     const response = await axios.get(`/plants/${id}`);
+    if (!response)
+      throw new Error(
+        "There was an error while fetching the data. Please try again later."
+      );
     return response.data;
-  } catch (err) {
-    if (err instanceof Error) {
-      console.log(err.message);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(
+        `An error occurred while fetching data: ${error.message}`
+      );
     } else {
-      console.log(err);
+      throw new Error("An unknown error occurred");
     }
   }
 };

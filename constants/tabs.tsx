@@ -1,5 +1,7 @@
-import { Container, CustomText } from "@/components/atoms";
-import { TabContent } from "@/components/molecucles";
+import { CustomText } from "@/components/atoms";
+import { TabContent, TabDetailsContent } from "@/components/molecucles";
+import { IData } from "@/types";
+import { View } from "react-native";
 
 export const homeTabs = [
   {
@@ -24,32 +26,20 @@ export const homeTabs = [
   },
 ];
 
-export const detailsTabs = [
+export const detailsTabs = (plant: IData) => [
   {
     key: "description",
     title: "Description",
-    content: (
-      <Container>
-        <CustomText secondary text="description" />
-      </Container>
-    ),
+    content: TabDetailsContent({ text: plant?.description }),
   },
   {
     key: "case-method",
     title: "case method",
-    content: (
-      <Container>
-        <CustomText secondary text="case method" />
-      </Container>
-    ),
+    content: TabDetailsContent({ text: "case method ..." }),
   },
   {
     key: "reviews",
     title: "Reviews",
-    content: (
-      <Container>
-        <CustomText secondary text="Reviews" />
-      </Container>
-    ),
+    content: TabDetailsContent({ text: "reviews ..." }),
   },
 ];

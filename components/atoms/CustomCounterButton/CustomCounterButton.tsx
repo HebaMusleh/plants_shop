@@ -1,11 +1,11 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { GestureResponderEvent, Text, TouchableOpacity } from "react-native";
 
 import styles from "./CustomCounterButton.styles";
 
-const CustomCounterButton = ({ text }: { text: string }) => {
+const CustomCounterButton = ({ text,onPress }: { text: string,onPress: ((event: GestureResponderEvent) => void) | undefined}) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );

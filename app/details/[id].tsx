@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
   Pressable,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -34,59 +35,65 @@ const DetailsScreen = () => {
     queryFn: () => getDetails(id),
   });
 
+  const [count, setCount] = useState<number>(1);
+  const increaseQuantity = () => setCount(count + 1);
+  const decreaseQuantity = () => setCount(count - 1);
+
   if (isLoading) return <Loading />;
 
   if (error) return <Error text={error.message} />;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <Header />
-      <View style={styles.image}>
-        <ImageBackground
-          source={{ uri: plant?.image_url }}
-          style={{ width: "100%", height: "100%" }}
-        />
-      </View>
-      <View style={styles.details}>
-        <View>
-          <CustomText text={plant?.name} />
-        </View>
-        <View style={styles.flexRow}>
-          <View>
-            <CustomText text={`${plant?.price}$`} price />
-          </View>
-          <View style={styles.flexRow}>
-            <CustomCounterButton text="+" />
-            <Text style={styles.counter}>1</Text>
-            <CustomCounterButton text="-" />
-          </View>
-        </View>
-        <View>
-          <Image source={require("../../assets/images/reviews.png")} />
-        </View>
-        <View>
-          <CustomTabs tabs={detailsTabs} />
-        </View>
-        <View style={styles.buttonWrapper}>
-          <Pressable
-            onPress={() => console.log("add to fav")}
-            style={styles.iconsStyle}
-          >
-            <MaterialCommunityIcons
-              name="heart-outline"
-              size={24}
-              color="#7D7B7B"
-            />
-          </Pressable>
-          <CustomButton
-            title="Add to cart"
-            onPress={() => console.log("add to cart")}
-            active
-            buttonStyle={{ flexBasis: "88%" }}
+    <ScrollView>
+      <SafeAreaView>
+        <Header />
+        <View style={styles.image}>
+          <ImageBackground
+            source={{ uri: plant?.image_url }}
+            style={{ width: "100%", height: "100%" }}
           />
         </View>
-      </View>
-    </SafeAreaView>
+        <View style={styles.details}>
+          <View>
+            <CustomText text={plant?.name} />
+          </View>
+          <View style={styles.flexRow}>
+            <View>
+              <CustomText text={`${plant?.price}$`} price />
+            </View>
+            <View style={styles.flexRow}>
+              <CustomCounterButton text="+" onPress={increaseQuantity} />
+              <Text style={styles.counter}>{count}</Text>
+              <CustomCounterButton text="-" onPress={decreaseQuantity} />
+            </View>
+          </View>
+          <View>
+            <Image source={require("../../assets/images/reviews.png")} />
+          </View>
+          <View>
+            <CustomTabs tabs={detailsTabs(plant)} />
+          </View>
+          <View style={styles.buttonWrapper}>
+            <Pressable
+              onPress={() => console.log("add to fav")}
+              style={styles.iconsStyle}
+            >
+              <MaterialCommunityIcons
+                name="heart-outline"
+                size={24}
+                color="#7D7B7B"
+              />
+            </Pressable>
+            <CustomButton
+              title="Add to cart"
+              onPress={() => console.log("add to cart")}
+              active
+              buttonStyle={{ flexBasis: "88%" }}
+            />
+          </View>
+        </View>
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 

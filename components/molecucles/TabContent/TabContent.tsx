@@ -1,33 +1,25 @@
 import React, { Fragment } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
-import PlantCard from "../PlantCard/PlantCard";
-import styles from "./TabContent.styles";
+import { View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
+import { getAll } from "@/services/fetchData.services";
+import PlantCard from "../PlantCard/PlantCard";
+import { Error, Loading } from "@/components/atoms";
 import { IData } from "@/types";
-import { useFetchData } from "@/hooks/useFetchData";
+import styles from "./TabContent.styles";
 
-const TabContent = ({type="all"}:{type?:string}) => {
+const TabContent = ({ type = "all" }: { type?: string }) => {
   const {
     data: plants,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["plants"],
-    queryFn: () => useFetchData(type),
+    queryKey: ["plants", type],
+    queryFn: () => getAll(type),
   });
 
-  if (isLoading)
-    return (
-      <View>
-        <ActivityIndicator color="#0B845C" />
-      </View>
-    );
-  if (error)
-    return (
-      <View>
-        <Text>Error</Text>
-      </View>
-    );
+  if (isLoading) return <Loading />;
+
+  if (error) return <Error text={error.message} />;
 
   return (
     <View style={styles.wrapper}>

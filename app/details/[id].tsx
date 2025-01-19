@@ -8,35 +8,48 @@ import {
   Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams } from "expo-router";
+import { useQuery } from "@tanstack/react-query";
+import { getDetails } from "@/services/fetchData.services";
 import {
   CustomButton,
   CustomCounterButton,
   CustomText,
+  Error,
   Header,
+  Loading,
 } from "@/components/atoms";
 import { CustomTabs } from "@/components/molecucles";
-
-import { data } from "@/mock/data";
 import { detailsTabs } from "@/constants/tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DetailsScreen = () => {
   const { id } = useLocalSearchParams();
-  const plant = data.find((plant) => plant.id === id);
+  const {
+    data: plant,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["plant", id],
+    queryFn: () => getDetails(id),
+  });
+
+  if (isLoading) return <Loading />;
+
+  if (error) return <Error text={error.message} />;
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <Header />
       <View style={styles.image}>
         <ImageBackground
-          source={{ uri: plant?.uri }}
+          source={{ uri: plant?.image_url }}
           style={{ width: "100%", height: "100%" }}
         />
       </View>
       <View style={styles.details}>
         <View>
-          <CustomText text={plant?.title} />
+          <CustomText text={plant?.name} />
         </View>
         <View style={styles.flexRow}>
           <View>
@@ -69,7 +82,7 @@ const DetailsScreen = () => {
             title="Add to cart"
             onPress={() => console.log("add to cart")}
             active
-            buttonStyle={{flexBasis:"88%"}}
+            buttonStyle={{ flexBasis: "88%" }}
           />
         </View>
       </View>

@@ -3,12 +3,12 @@ import React from "react";
 import { CustomButton, CustomText } from "@/components/atoms";
 import styles from "./Footer.styles";
 
-const Footer = () => {
+const Footer = ({totalPrice}:{totalPrice:number}) => {
   return (
     <View style={styles.footer}>
       <View>
         <CustomText text="Total" secondary />
-        <CustomText text="99$" price />
+        <CustomText text={`${totalPrice}$`} price />
       </View>
       <View style={styles.checkout}>
         <CustomButton

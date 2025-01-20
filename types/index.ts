@@ -44,10 +44,10 @@ interface CustomImageProps {
 }
 
 interface CartCardProps {
-  uri: string;
-  title: string;
+  image_url: string;
+  name: string;
   category: string;
-  price: string;
+  price: number;
 }
 
 interface PlantCardProps {

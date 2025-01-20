@@ -1,5 +1,5 @@
 import axios from "axios";
-import "../axiosConfig";
+import "@/axiosConfig";
 
 
 const getAll = async (type: string) => {

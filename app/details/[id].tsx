@@ -8,12 +8,12 @@ import {
   Pressable,
   ScrollView,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 import { getDetails } from "@/services/fetchData.services";
 import {
+  Container,
   CustomButton,
   CustomCounterButton,
   CustomText,
@@ -23,6 +23,7 @@ import {
 } from "@/components/atoms";
 import { CustomTabs } from "@/components/molecucles";
 import { detailsTabs } from "@/constants/tabs";
+import { useCartContext } from "@/context/CartContext";
 
 const DetailsScreen = () => {
   const { id } = useLocalSearchParams();
@@ -35,6 +36,9 @@ const DetailsScreen = () => {
     queryFn: () => getDetails(id),
   });
 
+  const {AddToCart,quantity} = useCartContext()
+
+
   const [count, setCount] = useState<number>(1);
   const increaseQuantity = () => setCount(count + 1);
   const decreaseQuantity = () => setCount(count - 1);
@@ -43,10 +47,12 @@ const DetailsScreen = () => {
 
   if (error) return <Error text={error.message} />;
 
+
   return (
     <ScrollView>
-      <SafeAreaView>
+      <Container home>
         <Header />
+        </Container>
         <View style={styles.image}>
           <ImageBackground
             source={{ uri: plant?.image_url }}
@@ -63,7 +69,7 @@ const DetailsScreen = () => {
             </View>
             <View style={styles.flexRow}>
               <CustomCounterButton text="+" onPress={increaseQuantity} />
-              <Text style={styles.counter}>{count}</Text>
+              <Text style={styles.counter}>{quantity}</Text>
               <CustomCounterButton text="-" onPress={decreaseQuantity} />
             </View>
           </View>
@@ -86,13 +92,13 @@ const DetailsScreen = () => {
             </Pressable>
             <CustomButton
               title="Add to cart"
-              onPress={() => console.log("add to cart")}
+              onPress={()=>AddToCart(plant?.id,1)}
               active
               buttonStyle={{ flexBasis: "88%" }}
             />
           </View>
         </View>
-      </SafeAreaView>
+      
     </ScrollView>
   );
 };

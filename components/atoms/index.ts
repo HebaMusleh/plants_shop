@@ -15,5 +15,5 @@ export {
   Container,
   Header,
   Loading,
-  Error
+  Error,
 };

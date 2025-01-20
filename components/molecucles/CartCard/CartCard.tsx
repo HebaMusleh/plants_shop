@@ -9,18 +9,24 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { CartCardProps } from "@/types";
 import styles from "./CartCard.styles";
 
-const CartCard: FC<CartCardProps> = ({ uri, title, category, price }) => {
+const CartCard: FC<CartCardProps> = ({ image_url, name, category, price }) => {
   return (
     <View style={styles.container}>
       <View style={styles.plantWrapper}>
-        <CustomImage cart uri={uri} />
+        <CustomImage cart uri={image_url} />
         <View style={{ marginLeft: 10 }}>
-          <CustomText text={title} />
+          <CustomText text={name} />
           <CustomText text={category} secondary />
           <View style={styles.plantWrapper}>
-            <CustomCounterButton text="-" />
+            <CustomCounterButton
+              text="-"
+              onPress={() => console.log("increase button")}
+            />
             <CustomText text="1" style={styles.text} />
-            <CustomCounterButton text="+" />
+            <CustomCounterButton
+              text="+"
+              onPress={() => console.log("increase button")}
+            />
           </View>
         </View>
       </View>

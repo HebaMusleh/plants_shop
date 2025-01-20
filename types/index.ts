@@ -23,7 +23,7 @@ interface IData {
 interface CustomTextProps {
   secondary?: boolean;
   price?: boolean;
-  text?: string|number;
+  text?: string | number;
   style?: TextStyle;
   textProps?: TextProps;
   textContainerStyle?: ViewStyle;
@@ -44,6 +44,7 @@ interface CustomImageProps {
 }
 
 interface CartCardProps {
+  id: number;
   image_url: string;
   name: string;
   category: string;

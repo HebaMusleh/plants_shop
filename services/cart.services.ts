@@ -1,5 +1,5 @@
 import axios from "axios";
-// import "@/axiosConfig";
+import "@/axiosConfig";
 
 const cartItems = async () => {
   try {
@@ -35,4 +35,22 @@ const addItems = async (id: number, quantity: number) => {
   }
 };
 
-export { addItems, cartItems };
+const removeItems = async (id: number) => {
+  try {
+    const response = await axios.delete(`http://127.0.0.1:8000/api/cart/`,{
+      data: { plant_id: id },
+    });
+    console.log(response);
+    return response;
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(
+        `An error occurred while fetching data: ${error.message}`
+      );
+    } else {
+      throw new Error("An unknown error occurred");
+    }
+  }
+};
+
+export { addItems, cartItems, removeItems };

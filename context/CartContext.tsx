@@ -6,8 +6,9 @@ interface CartContextType {
   totalPrice: number;
   isLoading: boolean;
   error: Error | null;
-  AddToCart: (id: number, quantity: number) => void;
+  addToCart: (id: number, quantity: number) => void;
   quantity: number;
+  removeFromCart: (id: number) => void;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -21,11 +22,26 @@ export const useCartContext = () => {
 };
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const { cardItems, totalPrice, isLoading, error, AddToCart, quantity } =
-    useCart();
+  const {
+    cardItems,
+    totalPrice,
+    isLoading,
+    error,
+    addToCart,
+    quantity,
+    removeFromCart,
+  } = useCart();
   return (
     <CartContext.Provider
-      value={{ cardItems, totalPrice, isLoading, error, AddToCart, quantity }}
+      value={{
+        cardItems,
+        totalPrice,
+        isLoading,
+        error,
+        addToCart,
+        quantity,
+        removeFromCart,
+      }}
     >
       {children}
     </CartContext.Provider>

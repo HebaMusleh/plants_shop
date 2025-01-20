@@ -36,7 +36,7 @@ const DetailsScreen = () => {
     queryFn: () => getDetails(id),
   });
 
-  const {AddToCart,quantity} = useCartContext()
+  const {addToCart,quantity} = useCartContext()
 
 
   const [count, setCount] = useState<number>(1);
@@ -92,7 +92,7 @@ const DetailsScreen = () => {
             </Pressable>
             <CustomButton
               title="Add to cart"
-              onPress={()=>AddToCart(plant?.id,1)}
+              onPress={()=>addToCart(plant?.id,1)}
               active
               buttonStyle={{ flexBasis: "88%" }}
             />

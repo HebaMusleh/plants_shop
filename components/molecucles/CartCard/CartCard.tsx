@@ -8,8 +8,10 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { CartCardProps } from "@/types";
 import styles from "./CartCard.styles";
+import { useCartContext } from "@/context/CartContext";
 
-const CartCard: FC<CartCardProps> = ({ image_url, name, category, price }) => {
+const CartCard: FC<CartCardProps> = ({id, image_url, name, category, price }) => {
+  const {removeFromCart} = useCartContext();
   return (
     <View style={styles.container}>
       <View style={styles.plantWrapper}>
@@ -31,7 +33,7 @@ const CartCard: FC<CartCardProps> = ({ image_url, name, category, price }) => {
         </View>
       </View>
       <View style={styles.secondSection}>
-        <TouchableOpacity style={styles.icons}>
+        <TouchableOpacity style={styles.icons} onPress={()=>removeFromCart(id)}>
           <MaterialCommunityIcons name="close" color={"#0B845C"} />
         </TouchableOpacity>
         <CustomText text={`${price}$`} price />

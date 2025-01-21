@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { useCartContext } from "@/context/CartContext";
 import {
   Container,
   CustomText,
@@ -8,7 +9,6 @@ import {
   Loading,
 } from "@/components/atoms";
 import { CartCard, Footer } from "@/components/molecucles";
-import { useCartContext } from "@/context/CartContext";
 
 const Cart = () => {
   const { cardItems, totalPrice, isLoading, error } = useCartContext();
@@ -32,7 +32,14 @@ const Cart = () => {
             {cardItems?.length > 0 ? (
               cardItems?.map((item) => {
                 const singleItem = item?.plant;
-                return <CartCard {...singleItem} key={singleItem.id} />;
+                const quantity = item?.quantity;
+                return (
+                  <CartCard
+                    {...singleItem}
+                    quantity={quantity}
+                    key={singleItem.id}
+                  />
+                );
               })
             ) : (
               <CustomText text="No products items in cart " />

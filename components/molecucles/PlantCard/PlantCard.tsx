@@ -5,7 +5,13 @@ import { router } from "expo-router";
 import { PlantCardProps } from "@/types";
 import styles from "./PlantCard.styles";
 
-const PlantCard: FC<PlantCardProps> = ({ image_url, name, category, price, id }) => {
+const PlantCard: FC<PlantCardProps> = ({
+  image_url,
+  name,
+  category,
+  price,
+  id,
+}) => {
   return (
     <TouchableOpacity
       style={styles.wrapper}

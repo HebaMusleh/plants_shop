@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { View, Image, ActivityIndicator } from "react-native";
-
-import styles from "./CustomImage.styles";
 import { CustomImageProps } from "@/types";
+import styles from "./CustomImage.styles";
 
 const CustomImage: React.FC<CustomImageProps> = ({
   uri,
   cart,
-  fallbackUri = "https://via.placeholder.com/200",
+  fallbackUri,
 }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);

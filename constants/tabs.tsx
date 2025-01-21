@@ -1,7 +1,5 @@
-import { CustomText } from "@/components/atoms";
 import { TabContent, TabDetailsContent } from "@/components/molecucles";
 import { IData } from "@/types";
-import { View } from "react-native";
 
 export const homeTabs = [
   {

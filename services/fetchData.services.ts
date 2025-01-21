@@ -1,10 +1,9 @@
 import axios from "axios";
 import "@/axiosConfig";
 
-
 const getAll = async (type: string) => {
   try {
-    const response = await axios.get(`/categories/${type}/plants`);
+    const response = await axios.get(`/plants/${type}`);
     if (!response)
       throw new Error(
         "There was an error while fetching the data. Please try again later."

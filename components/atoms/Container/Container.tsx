@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import { StyleSheet } from "react-native";
 
 const Container = ({

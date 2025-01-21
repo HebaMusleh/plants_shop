@@ -1,5 +1,7 @@
 import axios from "axios";
-import "@/axiosConfig";
+import "@/axiosConfig"; 
+
+// Note: Using "http://127.0.0.1:8000/api/cart/" allows the test to pass, whereas using "/cart/" causes it to fail. While the full URL works, it's not an ideal solution.
 
 const cartItems = async () => {
   try {
@@ -35,13 +37,12 @@ const addItems = async (id: number, quantity: number) => {
   }
 };
 
-const removeItems = async (id: number) => {
+const removeItems = async (id: number, quantity: number) => {
   try {
-    const response = await axios.delete(`http://127.0.0.1:8000/api/cart/`,{
-      data: { plant_id: id },
+    const response = await axios.delete(`http://127.0.0.1:8000/api/cart/`, {
+      data: { plant_id: id, quantity },
     });
-    console.log(response);
-    return response;
+    return response.data.message;
   } catch (error: unknown) {
     if (error instanceof Error) {
       throw new Error(

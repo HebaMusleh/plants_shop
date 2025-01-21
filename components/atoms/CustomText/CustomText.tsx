@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
 import React from "react";
-import styles from "./CustomText.styles";
+import { View, Text } from "react-native";
 import { CustomTextProps } from "@/types";
+import styles from "./CustomText.styles";
 
 const CustomText: React.FC<CustomTextProps> = ({
   secondary,

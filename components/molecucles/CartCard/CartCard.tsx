@@ -1,17 +1,20 @@
 import React, { FC } from "react";
 import { TouchableOpacity, View } from "react-native";
-import {
-  CustomCounterButton,
-  CustomImage,
-  CustomText,
-} from "@/components/atoms";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useCartContext } from "@/context/CartContext";
+import { CustomImage, CustomText } from "@/components/atoms";
+import CounterButtons from "../CounterButtons/CounterButtons";
 import { CartCardProps } from "@/types";
 import styles from "./CartCard.styles";
-import { useCartContext } from "@/context/CartContext";
 
-const CartCard: FC<CartCardProps> = ({id, image_url, name, category, price }) => {
-  const {removeFromCart} = useCartContext();
+const CartCard: FC<CartCardProps> = ({
+  id,
+  image_url,
+  name,
+  category,
+  price,
+}) => {
+  const { removeFromCart } = useCartContext();
   return (
     <View style={styles.container}>
       <View style={styles.plantWrapper}>
@@ -19,21 +22,14 @@ const CartCard: FC<CartCardProps> = ({id, image_url, name, category, price }) =>
         <View style={{ marginLeft: 10 }}>
           <CustomText text={name} />
           <CustomText text={category} secondary />
-          <View style={styles.plantWrapper}>
-            <CustomCounterButton
-              text="-"
-              onPress={() => console.log("increase button")}
-            />
-            <CustomText text="1" style={styles.text} />
-            <CustomCounterButton
-              text="+"
-              onPress={() => console.log("increase button")}
-            />
-          </View>
+          <CounterButtons id={id} />
         </View>
       </View>
       <View style={styles.secondSection}>
-        <TouchableOpacity style={styles.icons} onPress={()=>removeFromCart(id)}>
+        <TouchableOpacity
+          style={styles.icons}
+          onPress={() => removeFromCart(id, 1)}
+        >
           <MaterialCommunityIcons name="close" color={"#0B845C"} />
         </TouchableOpacity>
         <CustomText text={`${price}$`} price />

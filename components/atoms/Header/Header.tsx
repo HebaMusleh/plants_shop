@@ -1,10 +1,10 @@
 import React from "react";
 import { View, TouchableOpacity, Text, Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import styles from "./Header.styles";
 import { router } from "expo-router";
 import { useCartContext } from "@/context/CartContext";
 import Loading from "../Loading/Loading";
+import styles from "./Header.styles";
 
 const Header = ({ home = false }: { home?: boolean }) => {
   const { cardItems, isLoading } = useCartContext();
@@ -12,7 +12,7 @@ const Header = ({ home = false }: { home?: boolean }) => {
   return (
     <View style={styles.wrapper}>
       {home ? (
-          <Text style={styles.title}>Plants</Text>
+        <Text style={styles.title}>Plants</Text>
       ) : (
         <TouchableOpacity onPress={() => router.back()}>
           <MaterialCommunityIcons name="arrow-left" size={24} color="#121212" />

@@ -7,8 +7,8 @@ interface CartContextType {
   isLoading: boolean;
   error: Error | null;
   addToCart: (id: number, quantity: number) => void;
-  quantity: number;
-  removeFromCart: (id: number) => void;
+  quantity: (id: number) => number;
+  removeFromCart: (id: number, quantity: number) => void;
 }
 
 const CartContext = createContext<CartContextType | null>(null);

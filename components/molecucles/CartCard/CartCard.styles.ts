@@ -4,6 +4,7 @@ export default StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    marginVertical: 20,
   },
   plantWrapper: {
     flexDirection: "row",

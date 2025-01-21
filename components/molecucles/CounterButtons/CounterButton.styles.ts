@@ -4,7 +4,6 @@ export default StyleSheet.create({
   Wrapper: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
   },
   text: {
     marginLeft: 10,

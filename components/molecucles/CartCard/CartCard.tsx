@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Pressable, TouchableOpacity, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { useCartContext } from "@/context/CartContext";
 import { CustomImage, CustomText } from "@/components/atoms";
 import CounterButtons from "../CounterButtons/CounterButtons";
@@ -16,7 +17,15 @@ const CartCard: FC<CartCardProps> = ({
 }) => {
   const { removeFromCart } = useCartContext();
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() =>
+        router.push({
+          pathname: "/details/[id]",
+          params: { id },
+        })
+      }
+    >
       <View style={styles.plantWrapper}>
         <CustomImage cart uri={image_url} />
         <View style={{ marginLeft: 10 }}>
@@ -34,7 +43,7 @@ const CartCard: FC<CartCardProps> = ({
         </TouchableOpacity>
         <CustomText text={`${price}$`} price />
       </View>
-    </View>
+    </Pressable>
   );
 };
 

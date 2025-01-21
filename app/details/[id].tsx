@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -64,8 +64,9 @@ const DetailsScreen = () => {
           </View>
           <CounterButtons id={plant?.id} />
         </View>
-        <View>
-          <Image source={require("../../assets/images/reviews.png")} />
+        <View style={[styles.flexRow, { marginVertical: 10 }]}>
+          <Image source={require("../../assets/images/Reviews.png")} />
+          <Image source={require("../../assets/images/Avatars.png")} />
         </View>
         <View>
           <CustomTabs tabs={detailsTabs(plant)} />

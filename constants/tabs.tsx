@@ -1,4 +1,4 @@
-import { TabContent, TabDetailsContent } from "@/components/molecucles";
+import { Reviews, TabContent, TabDetailsContent } from "@/components/molecucles";
 import { IData } from "@/types";
 
 export const homeTabs = [
@@ -33,11 +33,11 @@ export const detailsTabs = (plant: IData) => [
   {
     key: "case-method",
     title: "case method",
-    content: TabDetailsContent({ text: "case method ..." }),
+    content: TabDetailsContent({ text: plant?.care_method }),
   },
   {
     key: "reviews",
     title: "Reviews",
-    content: TabDetailsContent({ text: "reviews ..." }),
+    content: Reviews({ reviews: plant?.reviews }),
   },
 ];

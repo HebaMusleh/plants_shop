@@ -10,7 +10,11 @@ interface ITabs {
   title: string;
   content: React.ReactNode;
 }
-
+interface IReviews {
+  id: number;
+  username: string;
+  comment: string;
+}
 interface IData {
   id: number;
   name: string;
@@ -18,6 +22,8 @@ interface IData {
   description: string;
   category: string;
   image_url: string;
+  care_method: string;
+  reviews: IReviews[];
 }
 
 interface CustomTextProps {
@@ -67,4 +73,5 @@ export {
   CustomImageProps,
   CartCardProps,
   PlantCardProps,
+  IReviews
 };

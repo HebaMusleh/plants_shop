@@ -26,7 +26,7 @@ export default StyleSheet.create({
     zIndex: 1,
   },
   cartWrapper: {
-    width: horizontalScale(80),
-    height: verticalScale(80),
+    width: verticalScale(80),
+    height: horizontalScale(80),
   },
 });

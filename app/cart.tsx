@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useCartContext } from "@/context/CartContext";
+import { moderateScale,verticalScale } from "@/utils/scalling";
 import {
   Container,
   CustomText,
@@ -56,11 +57,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 20,
+    paddingVertical: verticalScale(20),
   },
   title: {
-    fontSize: 24,
-    fontWeight: "700",
+    fontSize: moderateScale(24),
+    fontWeight: 700,
   },
 });
 export default Cart;

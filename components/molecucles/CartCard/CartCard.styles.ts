@@ -13,7 +13,7 @@ export default StyleSheet.create({
   },
   plantWrapper: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    // alignItems: "flex-end",
   },
   icons: {
     borderColor: "#0B845C",
@@ -32,5 +32,9 @@ export default StyleSheet.create({
   text: {
     marginLeft: verticalScale(10),
     marginRight: verticalScale(10),
+  },
+  details: {
+    marginLeft: verticalScale(10),
+    justifyContent:"space-around"
   },
 });

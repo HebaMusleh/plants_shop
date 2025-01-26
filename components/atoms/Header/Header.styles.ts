@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { verticalScale } from '@/utils/scalling';
-import { moderateScale } from '@/utils/scalling';
-import { horizontalScale } from '@/utils/scalling';
+import { verticalScale } from "@/utils/scalling";
+import { moderateScale } from "@/utils/scalling";
+import { horizontalScale } from "@/utils/scalling";
 
 export default StyleSheet.create({
   wrapper: {
@@ -25,12 +25,13 @@ export default StyleSheet.create({
     position: "absolute",
     backgroundColor: "#f00",
     color: "#fff",
-    height: 20,
-    width: 20,
+    height: moderateScale(20),
+    width: moderateScale(20),
     borderRadius: "50%",
     textAlign: "center",
     justifyContent: "center",
     top: 0,
     right: 0,
+    fontSize: moderateScale(10),
   },
 });

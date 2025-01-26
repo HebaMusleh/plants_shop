@@ -4,7 +4,7 @@ import { moderateScale, verticalScale } from "@/utils/scalling";
 export default StyleSheet.create({
   button: {
     borderRadius: moderateScale(8),
-    padding: verticalScale(10),
+    padding: moderateScale(10),
   },
   active: {
     backgroundColor: "#0B845C",

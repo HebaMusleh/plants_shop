@@ -100,12 +100,12 @@ const DetailsScreen = () => {
 const styles = StyleSheet.create({
   image: {
     width: "100%",
-    height: verticalScale(700),
+    height: verticalScale(500),
     marginBottom: horizontalScale(20),
     objectFit: "contain",
   },
   details: {
-    padding: 20,
+    padding: verticalScale(20),
     borderTopRightRadius: moderateScale(20),
     borderTopLeftRadius: moderateScale(20),
     marginTop: horizontalScale(-100),
@@ -117,10 +117,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   counter: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: verticalScale(10),
+    marginRight: verticalScale(10),
     fontWeight: 500,
-    fontSize: 20,
+    fontSize: moderateScale(20),
   },
   buttonWrapper: {
     flexDirection: "row",
@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
   iconsStyle: {
     borderWidth: 2,
     borderColor: "#7D7B7B",
-    borderRadius: 8,
-    padding: 5,
+    borderRadius: moderateScale(8),
+    padding: verticalScale(5),
   },
 });
 

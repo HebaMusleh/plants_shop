@@ -5,6 +5,7 @@ import { router } from "expo-router";
 import { useCartContext } from "@/context/CartContext";
 import Loading from "../Loading/Loading";
 import styles from "./Header.styles";
+import { moderateScale } from "@/utils/scalling";
 
 const Header = ({ home = false }: { home?: boolean }) => {
   const { cardItems, isLoading } = useCartContext();
@@ -15,13 +16,17 @@ const Header = ({ home = false }: { home?: boolean }) => {
         <Text style={styles.title}>Plants</Text>
       ) : (
         <TouchableOpacity onPress={() => router.back()}>
-          <MaterialCommunityIcons name="arrow-left" size={24} color="#121212" />
+          <MaterialCommunityIcons name="arrow-left" size={moderateScale(24)} color="#121212" />
         </TouchableOpacity>
       )}
 
       <View style={styles.cartIcon}>
         <Pressable onPress={() => router.push("/cart")}>
-          <MaterialCommunityIcons name="cart" size={30} color="#0B845C" />
+          <MaterialCommunityIcons
+            name="cart"
+            size={moderateScale(30)}
+            color="#0B845C"
+          />
         </Pressable>
       </View>
       <View style={styles.countItems}>

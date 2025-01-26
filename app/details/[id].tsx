@@ -81,7 +81,7 @@ const DetailsScreen = () => {
           >
             <MaterialCommunityIcons
               name="heart-outline"
-              size={24}
+              size={moderateScale(24)}
               color="#7D7B7B"
             />
           </Pressable>

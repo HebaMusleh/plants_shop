@@ -24,13 +24,13 @@ export default StyleSheet.create({
     borderColor: "#e0e0e0",
   },
   username: {
-    fontSize: moderateScale(16),
+    fontSize: moderateScale(12),
     fontWeight: "bold",
     color: "#333",
     marginBottom: horizontalScale(4),
   },
   comment: {
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(10),
     color: "#666",
     lineHeight: 20,
   },

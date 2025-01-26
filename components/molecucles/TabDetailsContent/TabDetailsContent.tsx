@@ -1,20 +1,13 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { CustomText } from "@/components/atoms";
-import { verticalScale } from "@/utils/scalling";
+import { Text, View } from "react-native";
+import styles from "./TabDetailsContent.styles";
 
 const TabDetailsContent = ({ text }: { text: string }) => {
   return (
     <View style={styles.wrapper}>
-      <CustomText secondary text={text} />
+      <Text style={styles.textStyle}>{text}</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: verticalScale(20),
-  },
-});
 
 export default TabDetailsContent;

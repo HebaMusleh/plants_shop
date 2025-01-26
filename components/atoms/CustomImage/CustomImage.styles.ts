@@ -1,3 +1,8 @@
+import {
+  horizontalScale,
+  moderateScale,
+  verticalScale,
+} from "@/utils/scalling";
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -6,21 +11,22 @@ export default StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#eee",
     overflow: "hidden",
-    width: 160,
-    height: 134,
-    borderRadius: 8,
+    width: horizontalScale(150),
+    height: verticalScale(134),
+    borderRadius: moderateScale(8),
   },
   image: {
     width: "100%",
     height: "100%",
-    borderRadius: 8,
+    aspectRatio: 1.2,
+    borderRadius: moderateScale(8),
   },
   loader: {
     position: "absolute",
     zIndex: 1,
   },
   cartWrapper: {
-    width: 80,
-    height: 80,
+    width: horizontalScale(80),
+    height: verticalScale(80),
   },
 });

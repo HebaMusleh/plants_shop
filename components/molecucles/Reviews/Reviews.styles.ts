@@ -1,17 +1,22 @@
 import { StyleSheet } from "react-native";
+import {
+  moderateScale,
+  verticalScale,
+  horizontalScale,
+} from "@/utils/scalling";
 
 export default StyleSheet.create({
   container: {
-    padding: 16,
+    padding: verticalScale(16),
     backgroundColor: "#f9f9f9",
   },
   reviewCard: {
-    marginBottom: 16,
-    padding: 12,
+    marginBottom: horizontalScale(16),
+    padding: verticalScale(12),
     backgroundColor: "#ffffff",
-    borderRadius: 8,
+    borderRadius: moderateScale(8),
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: horizontalScale(2) },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
@@ -19,13 +24,13 @@ export default StyleSheet.create({
     borderColor: "#e0e0e0",
   },
   username: {
-    fontSize: 16,
+    fontSize: moderateScale(16),
     fontWeight: "bold",
     color: "#333",
-    marginBottom: 4,
+    marginBottom: horizontalScale(4),
   },
   comment: {
-    fontSize: 14,
+    fontSize: moderateScale(14),
     color: "#666",
     lineHeight: 20,
   },

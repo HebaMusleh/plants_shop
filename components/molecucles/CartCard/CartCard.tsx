@@ -14,6 +14,7 @@ const CartCard: FC<CartCardProps> = ({
   name,
   category,
   price,
+  quantity
 }) => {
   const { removeFromCart } = useCartContext();
   return (
@@ -37,7 +38,7 @@ const CartCard: FC<CartCardProps> = ({
       <View style={styles.secondSection}>
         <TouchableOpacity
           style={styles.icons}
-          onPress={() => removeFromCart(id, 1)}
+          onPress={() => removeFromCart(id, quantity)}
         >
           <MaterialCommunityIcons name="close" color={"#0B845C"} />
         </TouchableOpacity>

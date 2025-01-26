@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { CustomText } from "@/components/atoms";
+import { verticalScale } from "@/utils/scalling";
 
 const TabDetailsContent = ({ text }: { text: string }) => {
   return (
@@ -12,7 +13,7 @@ const TabDetailsContent = ({ text }: { text: string }) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 20,
+    padding: verticalScale(20),
   },
 });
 

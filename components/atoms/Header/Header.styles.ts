@@ -1,4 +1,7 @@
 import { StyleSheet } from "react-native";
+import { verticalScale } from '@/utils/scalling';
+import { moderateScale } from '@/utils/scalling';
+import { horizontalScale } from '@/utils/scalling';
 
 export default StyleSheet.create({
   wrapper: {
@@ -6,10 +9,10 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#fff",
-    padding: 10,
+    padding: verticalScale(10),
   },
   title: {
-    fontSize: 24,
+    fontSize: moderateScale(24),
     fontWeight: "600",
     textAlign: "left",
     letterSpacing: 0.005,
@@ -22,8 +25,8 @@ export default StyleSheet.create({
     position: "absolute",
     backgroundColor: "#f00",
     color: "#fff",
-    width: 20,
     height: 20,
+    width: 20,
     borderRadius: "50%",
     textAlign: "center",
     justifyContent: "center",

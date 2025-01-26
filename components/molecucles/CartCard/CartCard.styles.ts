@@ -1,10 +1,15 @@
 import { StyleSheet } from "react-native";
+import {
+  horizontalScale,
+  verticalScale,
+  moderateScale,
+} from "@/utils/scalling";
 
 export default StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginVertical: 20,
+    marginVertical: verticalScale(20),
   },
   plantWrapper: {
     flexDirection: "row",
@@ -12,10 +17,10 @@ export default StyleSheet.create({
   },
   icons: {
     borderColor: "#0B845C",
-    borderWidth: 2,
+    borderWidth: moderateScale(2),
     borderRadius: "50%",
-    width: 25,
-    height: 25,
+    width: verticalScale(25),
+    height: verticalScale(25),
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
@@ -25,7 +30,7 @@ export default StyleSheet.create({
     alignItems: "flex-end",
   },
   text: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: verticalScale(10),
+    marginRight: verticalScale(10),
   },
 });

@@ -1,19 +1,24 @@
 import { StyleSheet } from "react-native";
+import {
+  moderateScale,
+  horizontalScale,
+  verticalScale,
+} from "@/utils/scalling";
 
 export default StyleSheet.create({
   button: {
     borderColor: "#0B845C",
-    borderWidth: 2,
-    borderRadius: 10,
-    width: 30,
-    height: 30,
+    borderWidth: moderateScale(2),
+    borderRadius: moderateScale(10),
+    width: horizontalScale(30),
+    height: horizontalScale(30),
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
   },
   text: {
     color: "#0B845C",
-    fontSize: 20,
+    fontSize: moderateScale(20),
     textAlign: "center",
   },
 });

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { verticalScale } from "@/utils/scalling";
 import { StyleSheet } from "react-native";
 
 const Container = ({
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingVertical: 20,
+    paddingVertical: verticalScale(20),
   },
 });
 

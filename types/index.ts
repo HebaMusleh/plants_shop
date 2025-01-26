@@ -55,6 +55,7 @@ interface CartCardProps {
   name: string;
   category: string;
   price: number;
+  quantity: number;
 }
 
 interface PlantCardProps {
@@ -73,5 +74,5 @@ export {
   CustomImageProps,
   CartCardProps,
   PlantCardProps,
-  IReviews
+  IReviews,
 };

@@ -11,6 +11,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 import { useCartContext } from "@/context/CartContext";
+import {
+  verticalScale,
+  horizontalScale,
+  moderateScale,
+} from "@/utils/scalling";
 import { getDetails } from "@/services/fetchData.services";
 import {
   Container,
@@ -35,8 +40,7 @@ const DetailsScreen = () => {
     queryFn: () => getDetails(id),
   });
 
-  const { addToCart, cardItems } = useCartContext();
-  console.log(cardItems.filter((items) => items.id === id));
+  const { addToCart } = useCartContext();
 
   if (isLoading) return <Loading />;
 
@@ -96,15 +100,15 @@ const DetailsScreen = () => {
 const styles = StyleSheet.create({
   image: {
     width: "100%",
-    height: 400,
-    marginBottom: 20,
+    height: verticalScale(700),
+    marginBottom: horizontalScale(20),
     objectFit: "contain",
   },
   details: {
     padding: 20,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-    marginTop: -50,
+    borderTopRightRadius: moderateScale(20),
+    borderTopLeftRadius: moderateScale(20),
+    marginTop: horizontalScale(-100),
     backgroundColor: "#fff",
   },
   flexRow: {

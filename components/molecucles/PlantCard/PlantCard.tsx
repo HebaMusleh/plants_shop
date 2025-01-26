@@ -26,7 +26,7 @@ const PlantCard: FC<PlantCardProps> = ({
       <View style={styles.textWrapper}>
         <CustomText text={name} />
         <CustomText secondary text={category} />
-        <CustomText price text={price} />
+        <CustomText price text={`${price} $`} />
       </View>
     </TouchableOpacity>
   );

@@ -29,6 +29,7 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartContextProvider>
+      <StatusBar style="dark" />
         <Stack
           initialRouteName="index"
           screenOptions={{
@@ -39,7 +40,6 @@ export default function RootLayout() {
           <Stack.Screen name="details/[id]" />
           <Stack.Screen name="+not-found" />
         </Stack>
-        <StatusBar style="auto" />
       </CartContextProvider>
     </QueryClientProvider>
   );

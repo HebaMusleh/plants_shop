@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useCartContext } from "@/context/CartContext";
 import { moderateScale,verticalScale } from "@/utils/scalling";
 import {
@@ -14,6 +14,7 @@ import { CartCard, Footer } from "@/components/molecucles";
 const Cart = () => {
   const { cardItems, totalPrice, isLoading, error } = useCartContext();
   return (
+    <ScrollView style={styles.wrapper}>
     <Container home>
       <Header />
       {isLoading ? (
@@ -50,6 +51,7 @@ const Cart = () => {
         </>
       )}
     </Container>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -63,5 +65,9 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(24),
     fontWeight: 700,
   },
+  wrapper:{
+    backgroundColor: "#fff",
+    position: "relative",
+  }
 });
 export default Cart;

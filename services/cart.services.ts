@@ -1,11 +1,10 @@
 import axios from "axios";
 import "@/axiosConfig"; 
 
-// Note: Using "http://127.0.0.1:8000/api/cart/" allows the test to pass, whereas using "/cart/" causes it to fail. While the full URL works, it's not an ideal solution.
 
 const cartItems = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/api/cart/");
+    const response = await axios.get("/cart/");
     return response;
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -20,7 +19,7 @@ const cartItems = async () => {
 
 const addItems = async (id: number, quantity: number) => {
   try {
-    const response = await axios.post("http://127.0.0.1:8000/api/cart/", {
+    const response = await axios.post("/cart/", {
       plant_id: id,
       quantity,
     });
